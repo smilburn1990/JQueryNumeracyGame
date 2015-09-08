@@ -1,0 +1,199 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1" />
+
+    <title>Game</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/number-game.js"></script>
+    
+    
+</head>
+
+<body>
+    <div class="spelling circus" id="game-container">
+       <div class="game standby">
+            <div class="background-container">            
+                <div class="element-1"></div>
+                <div class="element-2"></div>
+                <div class="element-3"></div>
+                <div class="element-4">
+                    <div class="inner-element-1"></div>
+                    <div class="inner-element-2"></div>
+                    <div class="inner-element-3"></div> 
+                </div>
+                <div class="element-5"></div>
+                <div class="element-6">
+                    <div class="inner-element-1"></div>
+                </div>
+                <div class="element-7"></div>
+                <div class="element-8"></div>
+            </div>
+
+            <div class="standby-page-elements">
+                <div class="bg-music-controls-wrapper">
+                    <a id="play" class="background-music touch-control">
+                    	<span class="icon"></span>
+                    </a>
+                </div>
+                <a class="start-btn-wrapper touch-control">
+	                <span class="start-btn">
+	                	<span class="btn-label">Start</span>
+	                </span> 
+	                <span class="start-btn-shadow"></span>
+                </a>
+            </div>
+
+            <div class="active-page-elements">
+                <div class="grid-container">
+                    <div class="reveal-wrapper"></div>
+
+                    <div class="table-container"></div>
+                </div>
+                
+                <div class="hint-container">
+                    <a id="pickNext" class="next-question touch-control">Next Word</a>
+                    <a id="pickNext" class="next-auto touch-control"></a>
+	
+	                <div class="hint-img-wrapper">
+	                    <p id="hintPic" class="pic-hint"></p>
+	                    
+	                   <div class="replay-sound touch-control">
+	                    	<span class="icon"></span>
+	                    </div>
+	                </div>
+                </div>
+
+                <div class="tiles-wrapper">
+                    <div class="drag touch-control player-tiles" data-letter="1" id="drag1">
+                        <span>1</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="2" id="drag2">
+                        <span>2</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="3" id="drag3">
+                        <span>3</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="4" id="drag4">
+                        <span>4</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="5" id="drag5">
+                        <span>5</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="6" id="drag6">
+                        <span>6</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="7" id="drag7">
+                        <span>7</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="8" id="drag8">
+                        <span>8</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="9" id="drag9">
+                        <span>9</span>
+                    </div>
+
+                    <div class="drag touch-control player-tiles" data-letter="0" id="drag10">
+                        <span>0</span>
+                    </div>
+                </div>
+                
+                <div class="helper">
+					<div class="message">
+						<p>Hello! One of my circus friends has gone missing. Spell the words to help me find them.</p>
+						<div class="close-message touch-control">
+							<span class="btn-label">Go</span>
+						</div>
+					</div>
+                	<div class="helper-character">
+                		<div class="element-1"></div>
+                	</div>
+                    <div class="score"></div>
+               	</div>
+
+                <div class="game-over-elements">
+                    <input class="restart-btn" type="button" value="Restart" />
+
+                    <div class="end-message"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden style="display:none;">
+	       <div class="audio-wrapper">
+				<audio id="hintSound" preload="auto">
+				
+				</audio>
+				
+				<audio id="successSound" preload="auto">
+					<source src="sounds/games-sound-fx/cashtill.ogg" type='audio/ogg; codecs="vorbis"'>
+					<source src="sounds/games-sound-fx/cashtill.mp3" type='audio/mpeg; codecs="mp3"'>
+				</audio>
+				
+				<audio id="failSound" preload="auto">
+					<source src="sounds/games-sound-fx/electric.ogg" type='audio/ogg; codecs="vorbis"'>
+					<source src="sounds/games-sound-fx/electric.mp3" type='audio/mpeg; codecs="mp3"'>
+				</audio>
+		
+				<audio id="moveSound" preload="auto">
+					<source src="sounds/games-sound-fx/throw.ogg" type='audio/ogg; codecs="vorbis"'>
+					<source src="sounds/games-sound-fx/throw.mp3" type='audio/mpeg; codecs="mp3"'>
+				</audio>
+				
+				<audio id="hitSound" preload="auto">
+					<source src="sounds/games-sound-fx/hit.ogg" type='audio/ogg; codecs="vorbis"'>
+					<source src="sounds/games-sound-fx/hit.mp3" type='audio/mpeg; codecs="mp3"'>
+				</audio>
+				
+				<audio id="missSound" preload="auto">
+					<source src="sounds/games-sound-fx/miss.ogg" type='audio/ogg; codecs="vorbis"'>
+					<source src="sounds/games-sound-fx/miss.mp3" type='audio/mpeg; codecs="mp3"'>
+				</audio>
+				   
+				<audio id="audio-bg">
+					<source src="sounds/games-sound-fx/BGmusic.ogg" type='audio/ogg; codecs="vorbis"'>
+					<source src="sounds/games-sound-fx/BGmusic.mp3" type='audio/mpeg; codecs="mp3"'>
+				</audio>
+				
+				<a href="javascript:play_multi_sound('successSound');"></a>
+		        <a href="javascript:play_multi_sound('failSound');"></a>
+		        <a href="javascript:play_multi_sound('moveSound');"></a>
+		        <a href="javascript:play_multi_sound('hitSound');"></a>
+		        <a href="javascript:play_multi_sound('missSound');"></a>
+		        <a href="javascript:play_multi_sound('audio-bg');"></a> 
+			</div>
+			
+	 						<ul id="wordlist" data-attempt-number="1" data-population-number="6" data-completion-number="4" data-grid-size="large">
+							    <li data-word="1" data-pic="4 - 3 = ?, 1 + 0 = ?"></li>         
+        						<li data-word="2" data-pic="7 - 5 = ?, 1 + 1 = ?"></li>      
+      						    <li data-word="3" data-pic="7 - 4 = ?, 2 + 1 = ?"></li>      
+      							<li data-word="4" data-pic="9 - 5 = ?, 2 + 2 = ?"></li>      
+        						<li data-word="5" data-pic="11 - 6 = ?, 4 + 1 = ?"></li>         
+        						<li data-word="6" data-pic="15 - 9 = ?, 4 + 2 = ?"></li>         
+       						    <li data-word="7" data-pic="14 - 7 = ?, 1 + 6 = ?"></li>         
+        						<li data-word="8" data-pic="4 x 2 = ?, 4 + 4 = ?"></li>         
+        						<li data-word="9" data-pic="10 - 1 = ?, 5 + 4 = ?"></li>         
+        						<li data-word="10" data-pic="15 - 5 = ?, 9 + 1 = ?"></li>         
+        						<li data-word="11" data-pic="13 - 2 = ?, 1 + 10 = ?"></li>      
+        						<li data-word="12" data-pic="15 - 3 = ?, 3 + 9 = ?"></li>
+                				<li data-word="13" data-pic="14 - 1 = ?, 10 + 3 = ?"></li>
+        						<li data-word="14" data-pic="15 - 1 = ?, 9 + 5 = ?"></li>
+        						<li data-word="15" data-pic="15 - 0 = ?, 7 + 8 = ?"></li>
+							</ul>
+		</div>
+	</div>
+</body>
+</html>
