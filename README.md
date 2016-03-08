@@ -1,5 +1,5 @@
 
-#JQuery Spelling Game
+#JQuery Numeracy Game
 
 This project is an interactive numeracy game created for key stage 2 children. I was set the challenge in my placement year from university when I worked for an educational software company.
 
